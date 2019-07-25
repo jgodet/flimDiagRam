@@ -1,4 +1,4 @@
-# test.r
+# Scott.r
 # written by JuG
 # July 25 2019
 
@@ -6,7 +6,7 @@
 #' Do something
 #' @author JuG
 #' @description 
-#' @param a
+#' @param 
 #' @details 
 #' @examples 
 #'
@@ -15,7 +15,7 @@
 #' @export
 
 
-test<- function(){
+Scott<- function(){
 
   return()
 }

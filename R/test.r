@@ -6,7 +6,7 @@
 #' Do something
 #' @author JuG
 #' @description 
-#' @param 
+#' @param a
 #' @details 
 #' @examples 
 #'

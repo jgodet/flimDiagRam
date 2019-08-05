@@ -3,8 +3,8 @@
 # July 25 2019
 
 
-#' Radially symmetric kernel (Gussian kernel)
-#' @author matt.shotwell
+#' Radially symmetric kernel (Gaussian kernel)
+#' @author <jgodet@unistra.fr> (adapted from matt.shotwell)
 #' @description Published by  <matt.shotwell@vanderbilt.edu> https://biostatmatt.com/archives/2745
 #' @details 
 #' @examples 

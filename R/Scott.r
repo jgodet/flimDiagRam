@@ -3,19 +3,18 @@
 # July 25 2019
 
 
-#' Do something
-#' @author JuG
-#' @description 
+#' Multivariate extension of Scott's bandwidth rule
+#' @author matt.shotwell
+#' @description Published by  <matt.shotwell@vanderbilt.edu> https://biostatmatt.com/archives/2745
+#' @examples 
 #' @param 
 #' @details 
-#' @examples 
 #'
 #'
 #' @return 
 #' @export
 
-
-Scott<- function(){
-
-  return()
+Scott <- function(data){
+  return(  t(chol(cov(data))) * nrow(data) ^ (-1/(ncol(data)+4)))
 }
+ 

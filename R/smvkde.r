@@ -3,9 +3,9 @@
 # July 25 2019
 
 
-#' Do something
-#' @author JuG
-#' @description 
+#' Compute KDE at (matrix) x given data
+#' @author matt.shotwell
+#' @description Published by  <matt.shotwell@vanderbilt.edu> https://biostatmatt.com/archives/2745
 #' @param 
 #' @details 
 #' @examples 
@@ -15,7 +15,6 @@
 #' @export
 
 
-smvkde<- function(){
-
-  return()
-}
+## 
+smvkde <- function(x, ...)
+  apply(x, 1, mvkde, ...)

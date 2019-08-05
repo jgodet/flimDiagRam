@@ -1,10 +1,14 @@
 Package: flimDiagRam
 Type: Package
-Title: What the package does (short line)
+Title: Function for plotting flimDiagRam as described in Godet et al. 2019
 Version: 1.0
 Date: 2019-07-25
-Author: Julien Godet
+Authors@R: 
+  person(given = "Julien",
+         family = "Godet",
+         role = c( "aut", "cre"),
+         email = "julien.godet@unistra.fr")
 Maintainer: <jgodet@unistra.fr>
-Description: More about what it does (maybe more than one line)
+Description: TODO Need ref here 
 License: GPL-3
 RoxygenNote: 6.1.1

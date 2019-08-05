@@ -12,7 +12,7 @@
 #' @param sdDistAcc vector of donor-acceptor sd on distances (nAcceptor elements) 
 #' @param bindingProbs vector of probabilities to define distances 
 #' @param R0 Förster distance
-#' @param Na = 50, 
+#' @param Na Number of 100-uples decays, 
 #' @param start channel at which the decay starts 
 #' @param A amplitude of the decay 
 #' @param nchannels Number of channels (default = 1024)

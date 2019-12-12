@@ -2,12 +2,12 @@
 % Please edit documentation in R/fig3panelB.r
 \name{fig3panelB}
 \alias{fig3panelB}
-\title{Do something}
+\title{Plot fig 3 panel B}
 \usage{
 fig3panelB()
 }
 \description{
-Do something
+Plot fig 3 panel B
 }
 \examples{
 fig3panelB()

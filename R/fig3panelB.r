@@ -3,7 +3,7 @@
 # August 05 2019
 
 
-#' Do something
+#' Plot fig 3 panel B
 #' @author JuG
 #' @description 
 #' @param 

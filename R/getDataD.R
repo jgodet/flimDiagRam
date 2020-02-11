@@ -22,10 +22,10 @@ getDataD <- function(pathEGFP,label, ref= 2200){
   alpha2d <- as.vector(as.matrix(alpha2d))
   tau1d <- read.table(paste(pathEGFP,"_t1.asc",sep=''),h=FALSE)
   tau1d <- as.vector(as.matrix(tau1d))
-  photons <- read.table(paste(pathEGFP,"_photons.asc",sep=''),h=FALSE)
-  photons <- as.vector(as.matrix(photons))
+  #photons <- read.table(paste(pathEGFP,"_photons.asc",sep=''),h=FALSE)
+  #photons <- as.vector(as.matrix(photons))
   
-  dataD <- data.frame(tau1d,alpha1d,alpha2d, photons)
+  dataD <- data.frame(tau1d,alpha1d,alpha2d)#, photons)
   dataD <- dataD[ tau1d!=0,]
   dataD$tauMean <- ifelse(dataD$tau1d==20, ref, dataD$tau1d * dataD$alpha1d/100 + ref * dataD$alpha2d/100)
   dataD$alpha <- dataD$alpha1d

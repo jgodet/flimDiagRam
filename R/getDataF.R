@@ -22,10 +22,10 @@ getDataF <- function(pathFRET,label){
   alpha2f <- as.vector(as.matrix(alpha2f))
   tau1f <- read.table(paste(pathFRET,"_t1.asc",sep=''),h=FALSE)
   tau1f <- as.vector(as.matrix(tau1f))
-  photons <- read.table(paste(pathFRET,"_photons.asc",sep=''),h=FALSE)
-  photons <- as.vector(as.matrix(photons))
+#  photons <- read.table(paste(pathFRET,"_photons.asc",sep=''),h=FALSE)
+#  photons <- as.vector(as.matrix(photons))
   
-  dataF <- data.frame(tau1f,alpha1f,alpha2f, photons)
+  dataF <- data.frame(tau1f,alpha1f,alpha2f)#, photons)
   dataF <- dataF[ tau1f!=0,]
   dataF$tauMean <- ifelse(dataF$tau1f==20, 2300, dataF$tau1f * dataF$alpha1f/100 + 2300 * dataF$alpha2f/100)
   dataF$alpha <- dataF$alpha1f

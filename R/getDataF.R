@@ -26,18 +26,17 @@ getDataF <- function(pathFRET,label){
 #  photons <- as.vector(as.matrix(photons))
   dataF <- data.frame(tau1f,alpha1f,alpha2f)#, photons)
   dataF <- dataF[ tau1f!=0,]
-  dataF <- dataF[ tau1f!=0,]
-  dataF <- dataF[dataD$tau1f!=20.,] 
-  dataF <- dataF[(dataD$alpha1f>=2. & dataD$alpha1f<=99.),] 
-  
-  dataF <- data.frame(tau1f,alpha1f,alpha2f)#, photons)
-  dataF <- dataF[ tau1f!=0,]
+
   dataF$tauMean <- ifelse(dataF$tau1f==20, 2300, dataF$tau1f * dataF$alpha1f/100 + 2300 * dataF$alpha2f/100)
   dataF$alpha <- dataF$alpha1f
-  dataF$alpha[dataF$alpha1f<5] <-  rnorm(sum(dataF$alpha1f<5),0,3)
-  dataF$tau <- dataF$tau1f
-  dataF$tau[dataF$alpha1f<5] <-  rnorm(sum(dataF$alpha1f<5),2300, 20 )
+  # dataF$alpha[dataF$alpha1f<5] <-  rnorm(sum(dataF$alpha1f<5),0,3)
+  # dataF$tau <- dataF$tau1f
+  # dataF$tau[dataF$alpha1f<5] <-  rnorm(sum(dataF$alpha1f<5),2300, 20 )
   dataF$tau <- dataF$tau/1000
   dataF$ind <- label
+  
+  dataF <- dataF[dataD$tau1f!=20.,] 
+  dataF <- dataF[(dataD$alpha>=2. & dataD$alpha<=98.),] 
+  
   return(dataF)
 }

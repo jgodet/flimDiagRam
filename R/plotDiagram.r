@@ -15,8 +15,8 @@
 #' @export
 
 
-plotDiagram<- function(data, ...){
-  print("Prepare plot...")
+plotDiagram<- function(data, silence=FALSE, ...){
+  if(!silence){print("Prepare plot...")}
   data <- data[data$tau1d!=20.,] 
   data <- data[(data$alpha>=2. & data$alpha<=99.),] 
   ## compute density on a grid 
@@ -53,6 +53,6 @@ plotDiagram<- function(data, ...){
       text(x = alphax, y = tau1y, paste(tauMean, "ns", sep=" "), col="blue", cex= 1.5,adj = 0)
     }
   }
-  print("Job done...")
+  if(!silence){print("Job done...")}
   return()
 }

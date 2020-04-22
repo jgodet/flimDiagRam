@@ -15,7 +15,7 @@
 #' @export
 
 
-plotDiagram<- function(data, silence=FALSE, nl=10, ...){
+plotDiagram<- function(data, silence=FALSE, nl=10, taulim = 2.40, ...){
   if(!silence){print("Prepare plot...")}
 
   ## compute density on a grid 
@@ -44,14 +44,13 @@ plotDiagram<- function(data, silence=FALSE, nl=10, ...){
   for (i in c(.5,.8,1.1,1.4,1.7,2,2.2,2.3,2.4,2.5)){
     alphax <- 0:100
     tauMean = i
-    tau1y <- 2.400 - (2.400 - tauMean) / (alphax/100)
+    tau1y <- taulim - (taulim - tauMean) / (alphax/100)
     lines(alphax, tau1y, lty=2, col='blue')
     alphax = 102
-    tau1y <- 2.400 - (2.400 - tauMean) / (alphax/100)
+    tau1y <- taulim - (taulim - tauMean) / (alphax/100)
     if(i%in% c(.5,.8,1.1,1.4,1.7,2,2.2,2.4)){
       text(x = alphax, y = tau1y, paste(tauMean, "ns", sep=" "), col="blue", cex= 1.5,adj = 0)
     }
   }
   if(!silence){print("Job done...")}
-  return()
 }

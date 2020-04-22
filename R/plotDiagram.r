@@ -17,6 +17,8 @@
 
 plotDiagram<- function(data, ...){
   print("Prepare plot...")
+  data <- data[data$tau1d!=20.,] 
+  data <- data[(data$alpha>=2. & data$alpha<=99.),] 
   ## compute density on a grid 
   dens.alpha <- seq(-5,105,length.out=105)
   dens.tau1 <- seq(-.1,2.4,length.out=100)
@@ -38,7 +40,7 @@ plotDiagram<- function(data, ...){
           xlab=expression(paste(alpha [1],"  %")),
           ylab=expression(tau [1]),lwd=2,
           ylim=c(0,2.5), xlim=c(0,115),...)
-  points(data, pch='.', col=rgb(.2,.2,.2,.5),...)
+  points(data[,c("alpha","tau")], pch='.', col=rgb(.2,.2,.2,.5),...)
   
   for (i in c(.5,.8,1.1,1.4,1.7,2,2.2,2.3,2.4,2.5)){
     alphax <- 0:100

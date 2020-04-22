@@ -25,6 +25,7 @@ getData <- function(pathTau, pathPhoton, label){
     photons <- as.vector(as.matrix(photons))
     
     dataD <- data.frame(tau1d, photons)
+    dataD <- dataD[dataD$tau1d > 0,]
     dataD$ind <- label
     return(dataD)
   }

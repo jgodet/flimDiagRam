@@ -24,6 +24,11 @@ getDataF <- function(pathFRET,label){
   tau1f <- as.vector(as.matrix(tau1f))
 #  photons <- read.table(paste(pathFRET,"_photons.asc",sep=''),h=FALSE)
 #  photons <- as.vector(as.matrix(photons))
+  dataF <- data.frame(tau1f,alpha1f,alpha2f)#, photons)
+  dataF <- dataF[ tau1f!=0,]
+  dataF <- dataF[ tau1f!=0,]
+  dataF <- dataF[dataD$tau1f!=20.,] 
+  dataF <- dataF[(dataD$alpha1f>=2. & dataD$alpha1f<=99.),] 
   
   dataF <- data.frame(tau1f,alpha1f,alpha2f)#, photons)
   dataF <- dataF[ tau1f!=0,]

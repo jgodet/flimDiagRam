@@ -17,8 +17,7 @@
 
 plotDiagram<- function(data, silence=FALSE, ...){
   if(!silence){print("Prepare plot...")}
-  data <- data[data$tau1d!=20.,] 
-  data <- data[(data$alpha>=2. & data$alpha<=99.),] 
+
   ## compute density on a grid 
   dens.alpha <- seq(-5,105,length.out=105)
   dens.tau1 <- seq(-.1,2.4,length.out=100)

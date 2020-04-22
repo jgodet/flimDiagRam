@@ -27,6 +27,9 @@ getDataD <- function(pathEGFP,label, ref= 2200){
   
   dataD <- data.frame(tau1d,alpha1d,alpha2d)#, photons)
   dataD <- dataD[ tau1d!=0,]
+  dataD <- dataD[dataD$tau1d!=20.,] 
+  dataD <- dataD[(dataD$alpha>=2. & dataD$alpha<=99.),] 
+  
   dataD$tauMean <- ifelse(dataD$tau1d==20, ref, dataD$tau1d * dataD$alpha1d/100 + ref * dataD$alpha2d/100)
   dataD$alpha <- dataD$alpha1d
   dataD$alpha[dataD$alpha1d<5] <-  rnorm(sum(dataD$alpha1d<5),0,3)

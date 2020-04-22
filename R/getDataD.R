@@ -32,7 +32,7 @@ getDataD <- function(pathEGFP,label, ref= 2200){
   dataD$tauMean <- ifelse(dataD$tau1d==20, ref, dataD$tau1d * dataD$alpha1d/100 + ref * dataD$alpha2d/100)
   dataD$alpha <- dataD$alpha1d
   # dataD$alpha[dataD$alpha1d<5] <-  rnorm(sum(dataD$alpha1d<5),0,3)
-  # dataD$tau <- dataD$tau1d
+  dataD$tau <- dataD$tau1d
   # dataD$tau[dataD$alpha1d<5] <-  rnorm(sum(dataD$alpha1d<5),ref, 20)
   dataD$tau <- dataD$tau/1000
   dataD$tauMeanForm <- (ref - dataD$alpha1d * (ref - ifelse(dataD$tau1d==20, ref, dataD$tau1d))/100)/1000

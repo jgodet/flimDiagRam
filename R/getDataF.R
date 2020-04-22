@@ -35,8 +35,8 @@ getDataF <- function(pathFRET,label){
   dataF$tau <- dataF$tau/1000
   dataF$ind <- label
   
-  dataF <- dataF[dataD$tau1f!=20.,] 
-  dataF <- dataF[(dataD$alpha>=2. & dataD$alpha<=98.),] 
+  dataF <- dataF[dataF$tau1f!=20.,] 
+  dataF <- dataF[(dataF$alpha>=2. & dataF$alpha<=98.),] 
   
   return(dataF)
 }

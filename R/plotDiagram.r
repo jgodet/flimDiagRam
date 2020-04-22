@@ -15,7 +15,7 @@
 #' @export
 
 
-plotDiagram<- function(data, silence=FALSE, ...){
+plotDiagram<- function(data, silence=FALSE, nl=10, ...){
   if(!silence){print("Prepare plot...")}
 
   ## compute density on a grid 
@@ -32,7 +32,7 @@ plotDiagram<- function(data, silence=FALSE, ...){
   dens.mtrx <- matrix(dens.val, 105, 100)
   
   par(mar=c(8,8,4,4))
-  contour(x=dens.alpha, y=dens.tau1,nlevels=10, z=dens.mtrx, 
+  contour(x=dens.alpha, y=dens.tau1,nlevels=nl, z=dens.mtrx, 
           axes=T, las=1, cex.lab=3, cex.axis=2.5, mgp=c(4,1.5,0),
           col=rgb(255/255,3/255,0/255,10:1/10),#red
           drawlabels = FALSE,

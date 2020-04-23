@@ -27,9 +27,9 @@ plotEcdf <- function(AA,BB,col1, col2,...){
   xy <- ecdf(AA)
   xx <- get("x", envir=environment(xy))# = sort(x)
   yy <- get("y", envir=environment(xy))
-  plot(yy,xx,col=col1,lwd=2,type='l',xaxp=c(0,1,2),...)
+  plot(xx,yy,col=col1,lwd=2,type='l',xaxp=c(0,1,2),...)
   xy <- ecdf(BB)
   xx <- get("x", envir=environment(xy))# = sort(x)
   yy <- get("y", envir=environment(xy))
-  lines(yy,xx,col=col2,lwd=2,...)
+  lines(xx,yy,col=col2,lwd=2,...)
 }

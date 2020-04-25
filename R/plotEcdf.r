@@ -51,6 +51,6 @@ plotEcdf <- function(AA,BB,col1, col2,CI=FALSE, ...){
       epsilon_i = sqrt(log(2/0.05)/(2*n1))
       L1=pmax(1:n1/n1-epsilon_i, 0)
       U1=pmin(1:n1/n1+epsilon_i, 1)
-      polygon(x = c(xx1,rev(xx1)), y = c(U, rev(L)),col = paste(col2,"80", sep=''), border = NA)
+      polygon(x = c(xx1,rev(xx1)), y = c(U1, rev(L1)),col = paste(col2,"80", sep=''), border = NA)
   }
 }

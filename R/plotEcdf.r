@@ -42,16 +42,15 @@ plotEcdf <- function(AA,BB,col1, col2,CI=FALSE, ...){
   lines(xx1,yy1,col=col2,lwd=2,...)
 
   if(CI==TRUE){
-      for (i in c(n,n1)){
-      n <- i
       #lower and upper bands:
-      L<-1:n
-      U<-1:n
       epsilon_i = sqrt(log(2/0.05)/(2*n))
-      
       L=pmax(1:n/n-epsilon_i, 0)
       U=pmin(1:n/n+epsilon_i, 1)
       polygon(x = c(xx,rev(xx)), y = c(U, rev(L)),col = paste(col1,"80", sep=''), border = NA)
-      }
+
+      epsilon_i = sqrt(log(2/0.05)/(2*n1))
+      L1=pmax(1:n1/n1-epsilon_i, 0)
+      U1=pmin(1:n1/n1+epsilon_i, 1)
+      polygon(x = c(xx1,rev(xx1)), y = c(U, rev(L)),col = paste(col2,"80", sep=''), border = NA)
   }
 }

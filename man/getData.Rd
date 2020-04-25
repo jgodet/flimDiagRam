@@ -4,7 +4,7 @@
 \alias{getData}
 \title{Read single exponential decay data file}
 \usage{
-getData(pathTau, pathPhoton, label, minPhotons = 100)
+getData(pathTau, pathPhoton, label, minPhotons = 0)
 }
 \arguments{
 \item{pathTau}{path to the lifetime data file (*_t1.asc)}

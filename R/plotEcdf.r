@@ -12,7 +12,10 @@
 #' @param col2 color 2
 #' @param CI boolean plot confidence interval
 #' @details 
-#' 
+#' Dvoretzky–Kiefer–Wolfowitz inequality:
+#' P ( sup|F_n - F| > epsilon  ) \leq 2*exp(-2n*epsilon^2)
+#' set alpha to 0.05 and alpha=2*exp(-2n*epsilon^2):
+#' --> epsilon_n = \sqrt(-log(0.5*0.05)/(2*n))
 #' @examples 
 #'
 #'
@@ -39,14 +42,7 @@ plotEcdf <- function(AA,BB,col1, col2,CI=FALSE, ...){
   lines(xx1,yy1,col=col2,lwd=2,...)
 
   if(CI==TRUE){
-    
-    # Dvoretzky–Kiefer–Wolfowitz inequality:
-    # P ( sup|F_n - F| > epsilon  ) leq 2*exp(-2n*epsilon^2)
-    # set alpha to 0.05 and alpha=2*exp(-2n*epsilon^2):
-    # --> epsilon_n = sqrt(-log(0.5*0.05)/(2*n))
-    
-    
-    for (i in c(n,n1)){
+      for (i in c(n,n1)){
       n <- i
       #lower and upper bands:
       L<-1:n
@@ -57,7 +53,5 @@ plotEcdf <- function(AA,BB,col1, col2,CI=FALSE, ...){
       U=pmin(1:n/n+epsilon_i, 1)
       polygon(x = c(xx,rev(xx)), y = c(U, rev(L)),col = paste(col1,"80", sep=''), border = NA)
       }
-  
   }
-  
-  }
+}

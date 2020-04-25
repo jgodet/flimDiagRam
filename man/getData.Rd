@@ -2,12 +2,20 @@
 % Please edit documentation in R/getData.r
 \name{getData}
 \alias{getData}
-\title{Do something}
+\title{Read single exponential decay data file}
 \usage{
-getData()
+getData(pathTau, pathPhoton, label, minPhotons = 100)
+}
+\arguments{
+\item{pathTau}{path to the lifetime data file (*_t1.asc)}
+
+\item{pathTau}{path to the lifetime data file (*_photons.asc)}
+}
+\value{
+data frame
 }
 \description{
-Do something
+Read single exponential decay data file
 }
 \examples{
 

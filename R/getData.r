@@ -17,7 +17,7 @@
 #' @export
 
 
-getData <- function(pathTau, pathPhoton, label, minPhotons){
+getData <- function(pathTau, pathPhoton, label, minPhotons=0){
 
     tau1d <- read.table(pathTau,h=FALSE)
     tauMat <- tau1d

@@ -38,7 +38,7 @@ plotEcdf <- function(AA,BB,col1, col2,CI=FALSE, ...){
   yy1 <- get("y", envir=environment(xy1))
   lines(xx1,yy1,col=col2,lwd=2,...)
 
-  if(CI=TRUE){
+  if(CI==TRUE){
     
     # Dvoretzky–Kiefer–Wolfowitz inequality:
     # P ( sup|F_n - F| > epsilon  ) leq 2*exp(-2n*epsilon^2)
